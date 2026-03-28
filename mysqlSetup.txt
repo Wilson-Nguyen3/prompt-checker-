@@ -1,0 +1,38 @@
+
+## Installation & Setup
+
+### 1. Database Provisioning
+Execute the following SQL script in your database client to build the required enterprise schemas and seed the initial corporate test data.
+
+```sql
+CREATE DATABASE IF NOT EXISTS safelog_db;
+USE safelog_db;
+
+CREATE TABLE IF NOT EXISTS normal_table (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    content TEXT
+);
+
+CREATE TABLE IF NOT EXISTS secret_table (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    secret_keyword VARCHAR(255),
+    description TEXT
+);
+
+CREATE TABLE IF NOT EXISTS audit_log (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id VARCHAR(50),
+    original_input TEXT,
+    redacted_input TEXT,
+    timestamp DATETIME
+);
+
+INSERT INTO normal_table (content) VALUES
+('Q3 Marketing Roadmap'),
+('Cafeteria Menu Update'),
+('Public API Documentation');
+
+INSERT INTO secret_table (secret_keyword, description) VALUES
+('PROJECT_TITAN', 'Unreleased pre-IPO financial data'),
+('DEF-409-X', 'Classified DOD contract identifier'),
+('ROOT_KEY_99', 'Production database master password');
