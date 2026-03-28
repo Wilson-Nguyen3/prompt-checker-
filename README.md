@@ -21,3 +21,4 @@ The proxy operates as a localized firewall between internal employees and extern
 
 Notes: 
 * For now, the program is running local, not connecting to ai whatsoever (so no api token is need).
+* There testing prompts (violation_Prompts_Test.txt) to try out the system (only work if you have the tested sql ran and connected)
