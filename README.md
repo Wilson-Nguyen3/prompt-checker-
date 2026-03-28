@@ -17,4 +17,7 @@ The proxy operates as a localized firewall between internal employees and extern
 * Python 3.8+
 * MySQL Server (or MariaDB)
 * Database management tool (e.g., DBeaver)
+* run (myseqlSetup.txt)'s sql commands to setup the database for testing out the program 
 
+Notes: 
+* For now, the program is running local, not connecting to ai whatsoever (so no api token is need).
